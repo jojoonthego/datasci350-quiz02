@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Analysis of Box-Office Movies!",
     "section": "",
-    "text": "This dataset is composed of 104 well-known movies that were made in 1980-2025. This shows the approximate budgets, worldwide revenues, runtimes, and ratings for the movies.\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nAI tools used: Chat-GPT for double-checking verification of initially written code."
+    "text": "This dataset is composed of 104 well-known movies that were made in 1980-2025. This shows the approximate budgets, worldwide revenues, runtimes, and ratings for the movies.\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nAI tools used: Chat-GPT for double-checking verification of initially written code, and looking for typos."
   },
   {
     "objectID": "runtime-rating.html",
