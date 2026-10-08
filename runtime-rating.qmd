@@ -24,6 +24,6 @@ plt.show()
 #| echo: true
 
 films["decade"] = films["year"] // 10 * 10
-films.groupby("decade")[["imdb_rating"]].mean().round(2) # rounding 2 digits, group by decade
+films.groupby("decade")["imdb_rating"].mean().round(2) # rounding 2 digits, group by decade
 
 ```

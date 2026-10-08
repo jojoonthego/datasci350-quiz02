@@ -1,16 +1,12 @@
 {
-  "hash": "b64432f1b20fc90fe23d59dbd71adba2",
+  "hash": "d2bf63d438712dfd815abab443289493",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: \"Runtime and Ratings\"\n---\n\n@fig-runtime-rating shows relationship between movie runtime in minutes and the IMDB rating. \n\n::: {#cell-fig-runtime-rating .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"],films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDB Rating\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Movie runtime in minutes versus IMDB rating. This association is more nuanced and random-looking.](runtime-rating_files/figure-html/fig-runtime-rating-output-1.png){#fig-runtime-rating width=590 height=431}\n:::\n:::\n\n\n::: {#d4db19ff .cell execution_count=2}\n``` {.python .cell-code}\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[[\"imdb_rating\"]].mean().round(2) # rounding 2 digits, group by decade\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```{=html}\n<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>imdb_rating</th>\n    </tr>\n    <tr>\n      <th>decade</th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>1980</th>\n      <td>8.01</td>\n    </tr>\n    <tr>\n      <th>1990</th>\n      <td>7.70</td>\n    </tr>\n    <tr>\n      <th>2000</th>\n      <td>7.94</td>\n    </tr>\n    <tr>\n      <th>2010</th>\n      <td>7.83</td>\n    </tr>\n    <tr>\n      <th>2020</th>\n      <td>7.44</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n```\n:::\n:::\n\n\n",
+    "markdown": "---\ntitle: \"Runtime and Ratings\"\n---\n\n@fig-runtime-rating shows relationship between movie runtime in minutes and the IMDB rating. \n\n::: {#cell-fig-runtime-rating .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"],films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDB Rating\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Movie runtime in minutes versus IMDB rating. This association is more nuanced and random-looking.](runtime-rating_files/figure-html/fig-runtime-rating-output-1.png){#fig-runtime-rating width=590 height=431}\n:::\n:::\n\n\n::: {#de11c1d6 .cell execution_count=2}\n``` {.python .cell-code}\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2) # rounding 2 digits, group by decade\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64\n```\n:::\n:::\n\n\n",
     "supporting": [
       "runtime-rating_files"
     ],
     "filters": [],
-    "includes": {
-      "include-in-header": [
-        "<script src=\"https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js\" integrity=\"sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js\" integrity=\"sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2\" crossorigin=\"anonymous\" data-relocate-top=\"true\"></script>\n<script type=\"application/javascript\">define('jquery', [],function() {return window.jQuery;})</script>\n"
-      ]
-    }
+    "includes": {}
   }
 }
