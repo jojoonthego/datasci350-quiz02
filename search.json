@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "Figure 1 shows the relationship between movie budgets and the revenue made.\n\n# generate the dataset \nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndf = pd.read_csv(\"films.csv\")\n\nplt.scatter(df[\"budget_musd\"],df[\"revenue_musd\"])\nplt.xlabel(\"Budget in MUSD\")\nplt.ylabel(\"Revenue in MUSD\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Movie budget versus revenue. There is a positive association."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analysis of Box-Office Movies!",
+    "section": "",
+    "text": "This dataset is composed of 104 well-known movies that were made in 1980-2025. This shows the approximate budgets, worldwide revenues, runtimes, and ratings for the movies.\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nAI tools used: Chat-GPT for double-checking verification of initially written code."
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "Figure 1 shows relationship between movie runtime in minutes and the IMDB rating.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"],films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDB Rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Movie runtime in minutes versus IMDB rating. This association is more nuanced and random-looking.\n\n\n\n\n\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[[\"imdb_rating\"]].mean().round(2) # rounding 2 digits, group by decade\n\n\n\n\n\n\n\n\nimdb_rating\n\n\ndecade\n\n\n\n\n\n1980\n8.01\n\n\n1990\n7.70\n\n\n2000\n7.94\n\n\n2010\n7.83\n\n\n2020\n7.44"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "The Bond Films!",
+    "section": "",
+    "text": "This page foucses on the box-office revenue for the James Bond Films over time.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\n\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"], marker=\"o\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Revenue in MUSD\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: James Bond film revenues over time.\n\n\n\n\n\nThe first James Bond film in this dataset was released in 1995, and the last was released in 2021"
+  }
+]
