@@ -1,0 +1,12 @@
+{
+  "hash": "88f8fc6965aa1aed18ee63cb3a1b040f",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"The Bond Films!\"\n---\n\nThis page foucses on the box-office revenue for the James Bond Films over time. \n\n::: {#cell-fig-bond-revenue .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\n\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"], marker=\"o\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Revenue in MUSD\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![James Bond film revenues over time.](bond_files/figure-html/fig-bond-revenue-output-1.png){#fig-bond-revenue width=602 height=430}\n:::\n:::\n\n\nThe first James Bond film in this dataset was released in 1995, and the last was released in 2021\n\n",
+    "supporting": [
+      "bond_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

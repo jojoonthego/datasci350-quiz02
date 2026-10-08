@@ -1,0 +1,23 @@
+---
+title: "Budget and Revenue" 
+---
+
+@fig-budget-revenue shows the relationship between movie budgets and the revenue made. 
+
+```{python}
+#| label: fig-budget-revenue
+#| fig-cap: "Movie budget versus revenue. There is a positive association." 
+#| echo: true 
+
+# generate the dataset 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("films.csv")
+
+plt.scatter(df["budget_musd"],df["revenue_musd"])
+plt.xlabel("Budget in MUSD")
+plt.ylabel("Revenue in MUSD")
+plt.show()
+
+```

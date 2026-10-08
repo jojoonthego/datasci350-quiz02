@@ -1,0 +1,12 @@
+{
+  "hash": "f13cdf7feece8406b41da4d45dac1246",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Budget and Revenue\" \n---\n\n@fig-budget-revenue shows the relationship between movie budgets and the revenue made. \n\n::: {#cell-fig-budget-revenue .cell execution_count=1}\n``` {.python .cell-code}\n# generate the dataset \nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndf = pd.read_csv(\"films.csv\")\n\nplt.scatter(df[\"budget_musd\"],df[\"revenue_musd\"])\nplt.xlabel(\"Budget in MUSD\")\nplt.ylabel(\"Revenue in MUSD\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Movie budget versus revenue. There is a positive association.](budget-revenue_files/figure-html/fig-budget-revenue-output-1.png){#fig-budget-revenue width=602 height=431}\n:::\n:::\n\n\n",
+    "supporting": [
+      "budget-revenue_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

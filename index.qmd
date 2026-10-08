@@ -1,0 +1,11 @@
+---
+title: "Analysis of Box-Office Movies!"
+---
+
+This dataset is composed of 104 well-known movies that were made in 1980-2025. This shows the approximate budgets, worldwide revenues, runtimes, and ratings for the movies. 
+
+- [Budget and Revenue](budget-revenue.qmd)
+- [Runtime and Ratings](runtime-rating.qmd)
+- [The Bond Films](bond.qmd)
+
+AI tools used: Chat-GPT for double-checking verification of initially written code. 
