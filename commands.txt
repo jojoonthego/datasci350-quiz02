@@ -1,0 +1,33 @@
+# clone my fork of the quiz 
+git clone <https://github.com/jojoonthego/datasci350-quiz02.git>
+
+# change directory 
+cd datasci350-quiz02
+
+# double check directory
+pwd
+
+# create project website 
+quarto create project website .
+
+# stage and commit the git ignore files
+git add .gitignore
+git commit -m "Add gitignore"
+
+# render commands for the qmds of interest to html 
+quarto render budget-revenue.qmd --to html
+quarto render runtime-rating.qmd --to html 
+quarto render bond.qmd --to html
+
+# render the whole website, and commit the website files and freeze folder. 
+quarto render
+git add . 
+git commit -m "Add site pages and freeze"
+
+# publish using Github pages
+quarto publish gh-pages
+
+# stage, commit, and push accordingly
+git add commands.txt 
+git commit -m "Add command log"
+git push origin main
